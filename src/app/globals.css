@@ -1,0 +1,185 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #00B2FF, #8B5CF6);
+  --bright-white: #FFFFFF;
+  --charcoal-grey: #1E1E1E;
+  --sunny-yellow: #FFD400;
+  --mint-neon: #00FFC2;
+  --purple-dark: #5A3ABF;
+  --light-red: #FF4D6D;
+  --sky-blue: #00B2FF;
+  --digital-purple: #8B5CF6;
+  --card-bg: rgba(255,255,255,0.05);
+  --card-bg-dark: #2A2A2A;
+  --text-secondary: #CCCCCC;
+  --cta-hover: #FFEA5A;
+}
+
+body {
+  background: var(--primary-gradient);
+  color: var(--bright-white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background: transparent;
+}
+
+/* Utility classes */
+.bg-gradient-primary { background: var(--primary-gradient) !important; }
+.bg-brightwhite { background-color: var(--bright-white) !important; }
+.bg-charcoal { background-color: var(--charcoal-grey) !important; }
+.bg-card { background-color: var(--card-bg) !important; }
+.bg-card-dark { background-color: var(--card-bg-dark) !important; }
+.bg-sunnyyellow { background-color: var(--sunny-yellow) !important; }
+.bg-mintneon { background-color: var(--mint-neon) !important; }
+.bg-purpledark { background-color: var(--purple-dark) !important; }
+.bg-lightred { background-color: var(--light-red) !important; }
+.bg-skyblue { background-color: var(--sky-blue) !important; }
+.bg-digitalpurple { background-color: var(--digital-purple) !important; }
+
+.text-brightwhite { color: var(--bright-white) !important; }
+.text-charcoal { color: var(--charcoal-grey) !important; }
+.text-sunnyyellow { color: var(--sunny-yellow) !important; }
+.text-mintneon { color: var(--mint-neon) !important; }
+.text-purpledark { color: var(--purple-dark) !important; }
+.text-lightred { color: var(--light-red) !important; }
+.text-skyblue { color: var(--sky-blue) !important; }
+.text-digitalpurple { color: var(--digital-purple) !important; }
+.text-secondary { color: var(--text-secondary) !important; }
+
+.border-mintneon { border-color: var(--mint-neon) !important; }
+.border-sunnyyellow { border-color: var(--sunny-yellow) !important; }
+.border-lightred { border-color: var(--light-red) !important; }
+.border-skyblue { border-color: var(--sky-blue) !important; }
+
+/* Card style */
+.card-glass {
+  background: var(--card-bg);
+  border: 1.5px solid var(--mint-neon);
+  border-radius: 10px;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+}
+.card-dark {
+  background: var(--card-bg-dark);
+  border-radius: 10px;
+  color: var(--bright-white);
+}
+
+/* Button CTA */
+.btn-cta {
+  background-color: var(--sunny-yellow) !important;
+  color: var(--charcoal-grey) !important;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.btn-cta:hover, .btn-cta:focus {
+  background-color: var(--cta-hover) !important;
+  color: var(--charcoal-grey) !important;
+}
+
+/* Accent hover */
+.hover-mintneon:hover { color: var(--mint-neon) !important; }
+.hover-purpledark:hover { color: var(--purple-dark) !important; }
+
+/* Promo badge */
+.badge-promo {
+  background: var(--light-red);
+  color: var(--bright-white);
+  font-weight: bold;
+}
+
+/* Input focus */
+input:focus, textarea:focus, select:focus {
+  border-color: var(--mint-neon) !important;
+  box-shadow: 0 0 0 2px var(--mint-neon)33;
+}
+
+/* Secondary text */
+.text-secondary { color: var(--text-secondary) !important; }
+
+/* Link active */
+.link-active { color: var(--sky-blue) !important; }
+
+/* Custom utility classes */
+.bg-darkbrown { background-color: var(--dark-brown) !important; }
+.bg-beigegold { background-color: var(--beige-gold) !important; }
+.bg-coffeeblack { background-color: var(--coffee-black) !important; }
+.bg-copperbrown { background-color: var(--copper-brown) !important; }
+.bg-creamwhite { background-color: var(--cream-white) !important; }
+
+.text-darkbrown { color: var(--dark-brown) !important; }
+.text-beigegold { color: var(--beige-gold) !important; }
+.text-coffeeblack { color: var(--coffee-black) !important; }
+.text-copperbrown { color: var(--copper-brown) !important; }
+.text-creamwhite { color: var(--cream-white) !important; }
+
+.border-darkbrown { border-color: var(--dark-brown) !important; }
+.border-beigegold { border-color: var(--beige-gold) !important; }
+.border-coffeeblack { border-color: var(--coffee-black) !important; }
+.border-copperbrown { border-color: var(--copper-brown) !important; }
+.border-creamwhite { border-color: var(--cream-white) !important; }
+
+/* Interactive elements */
+a, button {
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+button:active, a:active {
+  opacity: 0.85;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+  main, section {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
+
+/* Custom utility classes */
+.hover-shadow {
+  transition: box-shadow 0.3s ease;
+}
+.hover-shadow:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.hover-text-beigegold:hover { color: var(--beige-gold) !important; }
+.hover-text-copperbrown:hover { color: var(--copper-brown) !important; }
+
+.transition { transition: all 0.3s ease; }
+
+/* Bootstrap overrides */
+.bg-darkbrown { background-color: var(--dark-brown) !important; }
+.bg-beigegold { background-color: var(--beige-gold) !important; }
+.bg-coffeeblack { background-color: var(--coffee-black) !important; }
+.bg-copperbrown { background-color: var(--copper-brown) !important; }
+.bg-creamwhite { background-color: var(--cream-white) !important; }
+
+.text-darkbrown { color: var(--dark-brown) !important; }
+.text-beigegold { color: var(--beige-gold) !important; }
+.text-coffeeblack { color: var(--coffee-black) !important; }
+.text-copperbrown { color: var(--copper-brown) !important; }
+.text-creamwhite { color: var(--cream-white) !important; }
+
+.border-darkbrown { border-color: var(--dark-brown) !important; }
+.border-beigegold { border-color: var(--beige-gold) !important; }
+.border-coffeeblack { border-color: var(--coffee-black) !important; }
+.border-copperbrown { border-color: var(--copper-brown) !important; }
+.border-creamwhite { border-color: var(--cream-white) !important; }
