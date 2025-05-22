@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface CardProductProps {
   icon?: string;
@@ -21,13 +22,16 @@ export default function CardProduct({ icon, title, desc, image, onClick, classNa
     >
       <div className="card-body d-flex flex-column align-items-center">
         {image ? (
-          <img 
-            src={image} 
-            alt={title} 
-            className="img-fluid rounded mb-3" 
-            style={{ width: '80px', height: '80px', objectFit: 'cover' }}
-            onError={e => { (e.target as HTMLImageElement).src = '/next.svg'; }} 
-          />
+          <div className="position-relative mb-3" style={{ width: '80px', height: '80px' }}>
+            <Image 
+              src={image} 
+              alt={title}
+              fill
+              className="rounded"
+              style={{ objectFit: 'cover' }}
+              onError={e => { (e.target as HTMLImageElement).src = '/next.svg'; }}
+            />
+          </div>
         ) : (
           <div className="display-4 text-digitalpurple mb-3">{icon}</div>
         )}
