@@ -7,12 +7,8 @@ import type { Metadata } from "next";
 // Import Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// Dynamic import for Bootstrap JavaScript on client-side only
-import dynamic from 'next/dynamic';
-const BootstrapClient = dynamic(
-  () => import('@/components/BootstrapClient'),
-  { ssr: false }
-);
+// Import BootstrapProvider
+import BootstrapProvider from "@/components/BootstrapProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,7 +28,7 @@ export default function RootLayout({
         <Navbar />
         <main className="container py-4">{children}</main>
         <Footer />
-        <BootstrapClient />
+        <BootstrapProvider />
       </body>
     </html>
   );
