@@ -104,7 +104,14 @@ export default function PromoCarousel() {
     <section className="py-5 bg-gradient-primary">
       <div className="container">
         <div className="d-flex align-items-center mb-3">
-          <img src="/flash-icon.png" alt="Flash" width={48} height={48} className="me-2" />
+          <div className="position-relative me-2" style={{ width: 48, height: 48 }}>
+            <Image 
+              src="/flash-icon.png" 
+              alt="Flash" 
+              fill
+              style={{ objectFit: 'contain' }}
+            />
+          </div>
           <h2 className="mb-0 fw-bold flex-grow-1 text-skyblue">Flash Deal</h2>
           <span className="badge badge-promo fs-6 py-2 px-3">5 hari 03:06:36</span>
         </div>
@@ -130,7 +137,15 @@ export default function PromoCarousel() {
                   -{promo.discount}% OFF
                 </span>
                 <div className="d-flex align-items-center gap-2 p-3 pb-0">
-                  <Image src={promo.image} alt={promo.title} width={60} height={60} className="rounded bg-brightwhite" />
+                  <div className="position-relative" style={{ width: 60, height: 60 }}>
+                    <Image 
+                      src={promo.image} 
+                      alt={promo.title} 
+                      fill
+                      className="rounded bg-brightwhite"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
                   <div>
                     <div className="fw-bold small mb-1 text-brightwhite">{promo.title}</div>
                     <div className="badge bg-digitalpurple text-brightwhite me-1">{promo.type}</div>
