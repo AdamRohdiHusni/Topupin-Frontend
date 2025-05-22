@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 
@@ -11,6 +12,13 @@ interface CardProductProps {
 }
 
 export default function CardProduct({ icon, title, desc, image, onClick, className = "" }: CardProductProps) {
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      onClick?.();
+    }
+  };
+
   return (
     <div
       onClick={onClick}
@@ -18,7 +26,7 @@ export default function CardProduct({ icon, title, desc, image, onClick, classNa
       style={{ cursor: 'pointer' }}
       tabIndex={0}
       role="button"
-      onKeyPress={e => (e.key === "Enter" || e.key === " ") && onClick?.()}
+      onKeyDown={handleKeyPress}
     >
       <div className="card-body d-flex flex-column align-items-center">
         {image ? (
