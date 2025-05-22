@@ -4,7 +4,6 @@ import { EffectCoverflow, Autoplay, Pagination } from 'swiper/modules';
 import Image from "next/image";
 import Link from "next/link";
 import 'swiper/css';
-import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
 const banners = [
@@ -29,17 +28,32 @@ const banners = [
     desc: "Beli voucher game digital",
     link: "/voucher",
   },
+  {
+    id: 4,
+    image: "/banner4.jpg",
+    title: "Event Terbaru",
+    desc: "Ikuti event dan menangkan hadiah menarik!",
+    link: "/event",
+  },
+  {
+    id: 5,
+    image: "/banner5.jpg",
+    title: "Diskon Akhir Tahun",
+    desc: "Nikmati diskon spesial akhir tahun!",
+    link: "/diskon",
+  },
 ];
 
 export default function SliderBanner() {
   return (
-    <div className="w-100 bg-gradient-primary" style={{margin:0, padding:0}}>
+    <div style={{ width: '100vw', marginLeft: 'calc(-50vw + 50%)' }}>
       <Swiper
         effect="coverflow"
         grabCursor={true}
         centeredSlides={true}
         slidesPerView="auto"
         loop={true}
+        initialSlide={2}
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
@@ -64,7 +78,9 @@ export default function SliderBanner() {
             key={banner.id}
             className="banner-slide"
             style={{
-              width: '100vw',
+              width: '65vw',
+              maxWidth: '1280px',
+              minWidth: '320px',
               margin: 0,
               padding: 0,
               borderRadius: 0,
@@ -74,18 +90,19 @@ export default function SliderBanner() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              position: 'relative',
             }}
           >
-            <div className="position-relative w-100 h-100" style={{height: "500px"}}>
+            <div className="position-relative w-100 h-100" style={{height: "45vw", maxHeight: "720px"}}>
               <Image
                 src={banner.image}
                 alt={banner.title}
                 fill
                 className="object-fit-cover"
-                priority={banner.id === 1}
-                style={{ opacity: 0.7, border: 'none', outline: 'none' }}
+                priority={banner.id === 3}
+                style={{ border: 'none', outline: 'none' }}
               />
-              <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center" style={{background:'rgba(30,30,30,0.6)'}}>
+              <div className="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
                 <div className="text-center px-3 px-md-5">
                   <h2 className="display-4 fw-bold mb-3 text-brightwhite">{banner.title}</h2>
                   <p className="lead mb-4 text-brightwhite">{banner.desc}</p>
@@ -105,9 +122,11 @@ export default function SliderBanner() {
           margin: 0 !important;
         }
         .banner-slide {
-          width: 100vw !important;
-          max-width: 100vw !important;
-          height: 500px;
+          width: 65vw !important;
+          max-width: 1280px !important;
+          min-width: 320px !important;
+          height: 45vw;
+          max-height: 720px;
           border-radius: 0 !important;
           overflow: hidden;
           outline: none !important;
@@ -123,10 +142,22 @@ export default function SliderBanner() {
           opacity: 1;
           background: #00B2FF;
         }
+        @media (max-width: 1200px) {
+          .banner-slide {
+            width: 96vw !important;
+            max-width: 98vw !important;
+            min-width: 0 !important;
+            height: 40vw;
+            max-height: 420px;
+          }
+        }
         @media (max-width: 768px) {
           .banner-slide {
             width: 100vw !important;
+            max-width: 100vw !important;
+            min-width: 0 !important;
             height: 260px;
+            max-height: 260px;
           }
         }
       `}</style>

@@ -112,6 +112,7 @@ export default function PromoCarousel() {
           spaceBetween={24}
           slidesPerView={1}
           loop={true}
+          centeredSlides={true}
           autoplay={{ delay: 3500, disableOnInteraction: false }}
           pagination={{ clickable: true, dynamicBullets: true }}
           breakpoints={{
@@ -138,10 +139,14 @@ export default function PromoCarousel() {
                 </div>
                 <div className="card-body pt-2 pb-1 px-3">
                   <div className="text-decoration-line-through small mb-1 text-lightred">
-                    Rp. {promo.priceOld.toLocaleString()}
+                    Rp {promo.priceOld.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                   </div>
-                  <div className="fw-bold mb-1 text-brightwhite">Rp. {promo.priceIDR.toLocaleString()}</div>
-                  <div className="small mb-2 text-skyblue">RM. {promo.priceMYR}</div>
+                  <div className="fw-bold mb-1 text-brightwhite">
+                    Rp {promo.priceIDR.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                  </div>
+                  <div className="small mb-2 text-skyblue">
+                    RM {promo.priceMYR.toFixed(2)}
+                  </div>
                   <div className="d-flex align-items-center justify-content-between">
                     <span className="small text-secondary">{promo.stock} tersisa</span>
                     <div className="progress flex-grow-1 ms-2" style={{height:'6px', background:'#222'}}>

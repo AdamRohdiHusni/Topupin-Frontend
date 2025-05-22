@@ -183,3 +183,10 @@ button:active, a:active {
 .border-coffeeblack { border-color: var(--coffee-black) !important; }
 .border-copperbrown { border-color: var(--copper-brown) !important; }
 .border-creamwhite { border-color: var(--cream-white) !important; }
+
+/* Center promo-swiper carousel */
+.promo-swiper {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}

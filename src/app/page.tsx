@@ -1,10 +1,8 @@
 'use client';
-import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/Button";
 import SliderBanner from "../components/SliderBanner";
 import PromoCarousel from "../components/PromoCarousel";
-import PromoBanner from "@/components/PromoBanner";
 import USP from "@/components/USP";
 import GameListSection from "@/components/GameListSection";
 import FAQAccordion from "@/components/FAQAccordion";

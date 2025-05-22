@@ -55,6 +55,7 @@
 - Refactor komponen agar modular dan interaktif
 - Perbaikan error terkait Link dan warna
 - Penjelasan cara backup, restore, dan menyimpan riwayat chat
+- Perbaikan posisi coverflow (PromoCarousel) agar lebih rata tengah dan proporsional di semua ukuran layar
 
 ---
 
